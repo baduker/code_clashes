@@ -1,0 +1,31 @@
+You and your colleague work in a lab. The colleague does the dirty job of doing the tests. You, on the other hand, collect and write down the results.
+
+The results of the tests always come is pairs e.g. 11 22 or 33 44 etc.
+
+So, you store all of them consecutively in a single array - [11, 22, 33, 44].
+
+This is all good but...
+
+The chief of the lab likes to view the results of the tests in the following format with a specified delimiter of his liking. For example:
+
+[11:22], [33:44], [55-66], [77-88], [99 & 11], [22 & 33] etc.
+
+Your task:
+
+Complete the function chop_it_up that takes two arguments:
+
+an array of positive integers
+and a string delimiter
+and returns the result (as a string) as in the examples above and below.
+
+chop_it_up([1,2,3,4], " vs. ") --> [1 vs. 2], [3 vs. 4]
+
+chop_it_up([10,20,30,40], " | ") --> [10 | 20], [30 | 40]
+
+Notes:
+
+There's a preloaded list of your chief’s seven favorite string delimiters called: delimiters
+
+The array of integers that's passed into the function will always be of even length.
+
+Finally, you don't have to worry about an empty array or a missing delimiter. The minimum array length is 2 and there's always a single delimiter.
