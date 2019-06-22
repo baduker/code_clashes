@@ -1,0 +1,22 @@
+from random import randint, choice
+
+test.describe("Basic Tests")
+test.assert_equals(space_age(1072224000, "Earth"), 33.98)
+test.assert_equals(space_age(1072224000, "Mercury"), 141.07)
+test.assert_equals(space_age(2000000000, "Saturn"), 2.15)
+test.assert_equals(space_age(1821023456, "Neptune"), 0.35)
+
+test.describe("Random Tests")
+
+def random_planet():
+    planets = ["Earth", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+    return choice(planets)
+
+def random_seconds_alive():
+    return  randint(100000000, 3000000000)
+    
+for i in range(100):
+    rp = random_planet()
+    rsa = random_seconds_alive()
+    expected = space_age(rsa, rp)
+    test.assert_equals(space_age(rsa, rp), expected)
