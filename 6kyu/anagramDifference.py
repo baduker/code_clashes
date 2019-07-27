@@ -1,20 +1,6 @@
-def anagram_difference(str1, str2):
-    CHARS = 26 
-    count1 = [0]*CHARS 
-    count2 = [0]*CHARS 
-    
-    i = 0
-    while i < len(str1): 
-        count1[ord(str1[i])-ord('a')] += 1
-        i += 1
-  
-    i =0
-    while i < len(str2): 
-        count2[ord(str2[i])-ord('a')] += 1
-        i += 1
-  
-    result = 0
-    for i in range(26): 
-        result += abs(count1[i] - count2[i]) 
-    
-    return result 
+from collections import Counter
+
+def anagram_difference(*words):
+    count_one,count_two = map(Counter, words)
+    count_one.subtract(count_two)
+    return sum(map(abs, count_one.values()))
