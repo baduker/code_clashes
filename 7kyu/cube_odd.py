@@ -1,6 +1,2 @@
 def cube_odd(arr):
-    for i in arr:
-        if isinstance(i, str):
-            return None
-    
-    return sum(pow(i, 3) for i in arr if i % 2 != 0)
+    return sum(pow(n, 3) for n in arr if n % 2) if all(type(n) == int for n in arr) else None
